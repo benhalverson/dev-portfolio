@@ -1,0 +1,22 @@
+{
+  "name": "dev-portfolio",
+  "homepage": "https://github.com/benhalverson/dev-portfolio",
+  "authors": [
+    "Ben Halverson <benhalverson33@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0"
+  }
+}
