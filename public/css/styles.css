@@ -1,3 +1,8 @@
 .uppercase {
   text-transform: uppercase;
 }
+
+.circle {
+  border-radius: 50%;
+  padding-bottom: 15px;
+}
