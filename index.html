@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="portfolio">
 <head>
   <meta charset="UTF-8">
   <title>web</title>
@@ -28,10 +28,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">All <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Web Apps</a></li>
-          <li><a href="#">Websites</a></li>
-          <li><a href="#">Mobile Apps</a></li>
+          <li><a href="#">All</a></li>
+          <li><a href="#" data-filter="web-apps">Web Apps</a></li>
+          <li><a href="#" data-filter="websites">Websites</a></li>
+          <li><a href="#" data-filter="mobile-apps">Mobile Apps</a></li>
         </ul>
 
       </div><!-- /.navbar-collapse -->
@@ -40,25 +40,25 @@
 
 <div class="row">
   <div class="col-md-4">
-  <ul><li>
+  <ul class="list-group"><li class="list-group-item">
 <img src="//placehold.it/320x200" alt="e-commerce site"/>
     </li>
-  <li>
+  <li class="list-group-item">
 <img src="//placehold.it/320x170" alt="Video Production site"/>
     </li>
-  <li><img src="//placehold.it/320x170" alt="custom CMS"/></li>
+  <li class="list-group-item"><img src="//placehold.it/320x170" alt="custom CMS"/></li>
   </ul>
   </div>
   <div class="col-md-4">
-    <ul>
-      <li><img src="//placehold.it/320x284"/></li>
-      <li><img src="//placehold.it/320x255"/></li>
+    <ul class="list-group">
+      <li class="list-group-item"><img src="//placehold.it/320x284"/></li>
+      <li class="list-group-item"><img src="//placehold.it/320x255"/></li>
     </ul>
   </div>
   <div class="col-md-4">
-    <ul>
-      <li><img src="//placehold.it/320x284"/></li>
-      <li><img src="//placehold.it/320x255"/></li>
+    <ul class="list-group">
+      <li class="list-group-item"><img src="//placehold.it/320x284"/></li>
+      <li class="list-group-item"><img src="//placehold.it/320x255"/></li>
     </ul>
   </div>
 </div>
@@ -90,6 +90,7 @@
     <label for="message">Message</label>
       <input type="textarea" id="message" placeholder="Message" rows="4" cols="50" required/>
     </div>
+    <button class="btn btn-primary" ng-submit="sendit()">SEND MESSAGE</button>
     </form>
   </div>
 </div>
