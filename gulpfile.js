@@ -1,6 +1,6 @@
 'use strict';
 var gulp = require('gulp');
-var copy = require('copy');
+var copy = require('gulp-copy');
 var rimraf = require('rimraf');
 var run = require('gulp-run');
 var gutil = require('gulp-util');
@@ -23,7 +23,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', function() {
-  return gulpt.src(['source/**/*.js', 'source/*.js'])
+  return gulp.src(['source/**/*.js', 'source/*.js'])
     .pipe(concat('bundle.js'))
     .pipe(addsrc('source/**/*.html'))
     .pipe(addsrc('source/**/*.css'))
@@ -31,7 +31,7 @@ gulp.task('build', function() {
     .on('error', gutil.log)
 });
 
-gulp.task('bower', function() {
+gulp.task('bower', function(cb) {
   run('bower i').exec(cb)
   .on('error', gutil.log);
 });
