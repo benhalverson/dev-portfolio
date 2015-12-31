@@ -11,12 +11,12 @@ angular.module('portfolio', ['ui-router'])
       { url: '/',
         templateUrl: 'templates/home.html'
       })
-      .state('/portfolio'
+      .state('/portfolio',
       { url: '/portfolio',
-        templateUrl: 'templates/portfolio.html'})
+        templateUrl: 'templates/portfolio.html'});
   });
 
-angular.module('emailme', [])
+angular.module('portfolio', [])
   .factory('email', ['$http', function($http) {
 
     function mailgun(key, to, from, message) {

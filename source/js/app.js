@@ -11,7 +11,7 @@ angular.module('portfolio', ['ui-router'])
       { url: '/',
         templateUrl: 'templates/home.html'
       })
-      .state('/portfolio'
+      .state('/portfolio',
       { url: '/portfolio',
-        templateUrl: 'templates/portfolio.html'})
+        templateUrl: 'templates/portfolio.html'});
   });

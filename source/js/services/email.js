@@ -1,4 +1,4 @@
-angular.module('emailme', [])
+angular.module('portfolio', [])
   .factory('email', ['$http', function($http) {
 
     function mailgun(key, to, from, message) {
