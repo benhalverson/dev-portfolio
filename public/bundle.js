@@ -96,6 +96,25 @@ $(document).ready(function() {
         }
     });
 
+
+    // Append .background-image-holder <img>'s as CSS backgrounds
+
+    $('.background-image-holder').each(function() {
+        var imgSrc = $(this).children('img').attr('src');
+        $(this).css('background', 'url("' + imgSrc + '")');
+        $(this).children('img').hide();
+        $(this).css('background-position', 'initial');
+    });
+
+    // Fade in background images
+
+    setTimeout(function() {
+        $('.background-image-holder').each(function() {
+            $(this).addClass('fadeIn');
+        });
+    }, 200);
+
+
     // Autoshow modals
 
 	$('.foundry_modal[data-time-delay]').each(function(){
