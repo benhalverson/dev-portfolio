@@ -22,5 +22,10 @@ angular.module('portfolio', [])
         }
       }
       return $http.post('ENV.API_URL', data);
+      console.log('factory data', data);
     }
-  }])
+
+    function sendgrid(user, key, to, from, message, subject) {
+      return $http.jsonp('ENV.SENDGRID_URL');
+    }
+  }]);

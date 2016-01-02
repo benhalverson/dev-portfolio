@@ -113,7 +113,7 @@
                                       </li>
                                       <li>
                                         <a href="http://livecoding.tv/benhalverson" title="Livecoding.tv">
-                                          <i class="fa fa-television"></i>
+                                          <i class="fa fa-television"></i></a>
                                       </li>
                                   </ul>
                               </div>
@@ -213,6 +213,8 @@
 
         </div>
         <!--/end masonary-->
+<!-- TODO: setup ui router
+        <div ui-view></div>-->
 
 
 
@@ -239,11 +241,16 @@
                     </p>
                 </div>
                 <div class="col-sm-6 col-md-5 col-md-offset-1">
-                    <form class="form-email" data-success="Thanks for your submission, we will be in touch shortly." data-error="Please fill all fields correctly.">
-                        <input type="text" class="validate-required" name="name" placeholder="Your Name" />
-                        <input type="text" class="validate-required validate-email" name="email" placeholder="Email Address" />
-                        <textarea class="validate-required" name="message" rows="4" placeholder="Message"></textarea>
-                        <button type="submit">Send Message</button>
+                    <form class="form-email">
+                        <input type="text" ng-model="form.name" class="validate-required" name="name" placeholder="Your Name" />
+                        <input type="text" ng-model="form.email" class="validate-required validate-email" name="email" placeholder="Email Address" />
+                        <input type="text" ng-model="form.subject" class="validate-required validate" name="subject" placeholder="Subject" />
+                        <textarea ng-model="form.message"class="validate-required" name="message" rows="4" placeholder="Message"></textarea>
+                        <button type="submit" ng-class='{"disabled": successful}' ng-click="sendEmail(form)">
+                          <div ng-if='!successful'>Send Message</div>
+                          <div ng-if='successful'>Message was sent!</div>
+                        </button>
+
                     </form>
                 </div>
             </div>
