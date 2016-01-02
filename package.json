@@ -23,6 +23,7 @@
     "gulp-copy": "0.0.2",
     "gulp-run": "1.6.12",
     "gulp-util": "3.0.7",
+    "imagemin": "4.0.0",
     "rimraf": "2.5.0"
   }
 }
