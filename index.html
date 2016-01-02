@@ -209,40 +209,40 @@
 
 
 
-<div class="container">
-<div class="row">
-  <div class="col-md-6">
-    <h3 class="uppercase">Get in touch</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <ul>
-      <li>Email: benhalverson@me.com</li>
-      <li>Phone: (408) 772-3986</li>
-    </ul>
-    <ul>
-      <li><a href="http://twitter.com/ben_halverson"><i class="fa fa-3x fa-twitter-square"></i></a></li>
-      <li><a href="http://github.com/benhalverson"><i class="fa fa-3x fa-github-square"></i></a></li>
-      <li><a href="http://linkedin.com/in/benhalverson"><i class="fa fa-3x fa-linkedin-square"></i></a></li>
-    </ul>
-  </div>
-  <div class="col-md-6">
-    <form>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" id="name" placeholder="Name" required/>
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="text" id="email" placeholder="Email" required/>
-    </div>
-    <div class="form-group">
-    <label for="message">Message</label>
-      <input type="textarea" id="message" placeholder="Message" rows="4" cols="50" required/>
-    </div>
-    <button class="btn btn-primary" ng-submit="sendit()">SEND MESSAGE</button>
-    </form>
-  </div>
-</div>
-</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-5">
+                    <h4 class="uppercase">Get In Touch</h4>
+                    <p>
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
+                    </p>
+                    <hr>
+
+                      <a href="http://twitter.com/ben_halverson"><i class="fa fa-3x fa-twitter-square"></i></a>
+                      <a href="http://github.com/benhalverson"><i class="fa fa-3x fa-github-square"></i></a>
+                      <a href="http://linkedin.com/in/benhalverson"><i class="fa fa-3x fa-linkedin-square"></i></a>
+
+
+                    <hr>
+                    <p>
+                        <strong>E:</strong> benhalverson@me.com
+                        <br />
+                        <strong>P:</strong> (408)772-3986
+                        <br />
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-5 col-md-offset-1">
+                    <form class="form-email" data-success="Thanks for your submission, we will be in touch shortly." data-error="Please fill all fields correctly.">
+                        <input type="text" class="validate-required" name="name" placeholder="Your Name" />
+                        <input type="text" class="validate-required validate-email" name="email" placeholder="Email Address" />
+                        <textarea class="validate-required" name="message" rows="4" placeholder="Message"></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+
 <script src="public/vendor/angular/angular.js"></script>
 <script src="public/vendor/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="public/vendor/jquery/dist/jquery.js"></script>
