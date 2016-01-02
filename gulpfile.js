@@ -14,7 +14,8 @@ var paths = {
   cleanedfiles: [
     'public/templates',
     'public/css',
-    'public/js'
+    'public/js',
+    'public/fonts'
   ]
 }
 
@@ -26,7 +27,10 @@ gulp.task('build', function() {
   return gulp.src(['source/**/*.js', 'source/*.js'])
     .pipe(concat('bundle.js'))
     .pipe(addsrc('source/**/*.html'))
+    .pipe(addsrc('source/**/*.js'))
     .pipe(addsrc('source/**/*.css'))
+    .pipe(addsrc('source/**/*.woff'))
+    .pipe(addsrc('source/**/*.ttf'))
     .pipe(gulp.dest(paths.filepath))
     .on('error', gutil.log)
 });
@@ -36,7 +40,7 @@ gulp.task('bower', function(cb) {
   .on('error', gutil.log);
 });
 
-gulp.task('clean', function() {
+gulp.task('clean', function(cb) {
   async.each(paths.cleanedfiles, rimraf, cb);
 });
 
