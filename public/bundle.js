@@ -16,7 +16,14 @@ angular.module('portfolio', ['ui.router'])
         templateUrl: 'templates/portfolio.html'});
   });
 
-
+var mr_firstSectionHeight,
+    mr_nav,
+    mr_navOuterHeight,
+    mr_navScrolled = false,
+    mr_navFixed = false,
+    mr_outOfSight = false,
+    mr_floatingProjectSections,
+    mr_scrollTop = 0;
 $(document).ready(function() {
     "use strict";
 
