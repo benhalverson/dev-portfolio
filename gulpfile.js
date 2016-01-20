@@ -71,7 +71,7 @@ gulp.task('build', function() {
 });
 
 gulp.task('bower', function(cb) {
-  run('bower i').exec(cb)
+  run('bower install').exec(cb)
   .on('error', gutil.log);
 });
 
