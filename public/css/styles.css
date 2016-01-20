@@ -1,0 +1,12 @@
+.uppercase {
+  text-transform: uppercase;
+}
+
+.circle {
+  border-radius: 50%;
+  padding-bottom: 15px;
+}
+.parallax > .background-image-holder,
+.parallax .slides li > .background-image-holder {
+  height: 150vh;
+}
