@@ -1,11 +1,7 @@
-angular.module('portfolio', [])
-  .factory('email', ['$http', function($http) {
-
-    function mailgun(key, to, from, message) {
-      //do stuff
-    }
-
-    function mandrill(key, to, from, message, subject, name) {
+angular.module('portfolio')
+  .service('email', ['$http', 'ENV', function($http, ENV) {
+    this.mandrill = function (key, to, from, message, subject, name) {
+      console.log('service data', data);
       var data = {
         'key': key,
         'message': {
@@ -20,7 +16,9 @@ angular.module('portfolio', [])
           'subject': name + " - " + subject,
           'html': message
         }
-      }
-      return $http.post('ENV.API_URL', data);
+      };
+      console.log('message: ', data);
+      console.log('status', data.data.status);
+      return  $http.post(ENV.API_URL, data)
     }
-  }])
+  }]);

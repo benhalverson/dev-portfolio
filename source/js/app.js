@@ -1,17 +1,21 @@
 'use strict';
-angular.module('portfolio', ['ui.router'])
+angular.module('portfolio', [])
   .constant('ENV', {
-    API_URL: 'mailgunurl'
-  })
-  .config(function($stateProvider, $urlRouteProvider) {
-    $urlRouteProvider.otherwise('/');
+    API_URL: 'https://mandrillapp.com/api/1.0/messages/send.json',
+    APIKEY: 'Zt9VJPNzZOrqVhOrUH3-Uw',
+    MYEMAIL: 'benhalverson@me.com'
 
-    $stateProvider
-      .state('home',
-      { url: '/',
-        templateUrl: 'templates/home.html'
-      })
-      .state('/portfolio',
-      { url: '/portfolio',
-        templateUrl: 'templates/portfolio.html'});
-  });
+  })
+  // .config(function($stateProvider, $urlRouteProvider) {
+  //   $urlRouteProvider.otherwise('/');
+  //
+  //   $stateProvider
+  //     .state('email',
+  //     { url: '/email',
+  //       controller: 'emailCtrl',
+  //       templateUrl: 'templates/home.html'
+  //     })
+  //     .state('/portfolio',
+  //     { url: '/portfolio',
+  //       templateUrl: 'templates/portfolio.html'});
+  // });

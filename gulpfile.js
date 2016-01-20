@@ -7,9 +7,8 @@ var gutil = require('gulp-util');
 var concat = require('gulp-concat');
 var addsrc = require('gulp-add-src');
 var async = require('async');
-// var imageop = require('gulp-image-optimization');
-
-
+var sourcemaps = require('gulp-sourcemaps');
+var eslint = require('gulp-eslint');
 var paths = {
   filesrc: 'source/**/*',
   filepath: 'public',
@@ -22,21 +21,44 @@ var paths = {
   ]
 }
 
-// gulp.task('images', function(cb) {
-//     gulp.src(['source/**/*.png','source/**/*.jpg']).pipe(imageop({
-//         optimizationLevel: 5,
-//         progressive: true,
-//         interlaced: true
-//     })).pipe(gulp.dest('public/images')).on('end', cb).on('error', cb);
-// });
-
 gulp.task('watch', function() {
-  gulp.watch('source/**/*', ['build',])
+  gulp.watch('source/**/*', ['lint', 'build',])
+});
+
+gulp.task('lint', function() {
+  return gulp.src(['source/**/*.js','!node_modules/**'])
+    .pipe(eslint({
+        extends: 'eslint:recommended',
+        ecmaFeatures: {
+            'modules': true
+        },
+        globals: {
+            'jQuery':false,
+            '$':true,
+            'angular': true,
+            'Masonry': true,
+            'google': true,
+            'mandrill': true
+        },
+        envs: [
+            'browser'
+        ]
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.result(function (result) {
+      console.log('ESLint result: ' + result.filePath);
+      console.log('# Messages: ' + result.messages.length);
+      console.log('# Warnings: ' + result.warningCount);
+      console.log('# Errors: ' + result.errorCount);
+
+    }));
 });
 
 gulp.task('build', function() {
   return gulp.src(['source/**/*.js', 'source/*.js'])
+    .pipe(sourcemaps.init())
     .pipe(concat('bundle.js'))
+    .pipe(sourcemaps.write())
     .pipe(addsrc('source/**/*.html'))
     .pipe(addsrc('source/**/*.js'))
     .pipe(addsrc('source/**/*.css'))
