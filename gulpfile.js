@@ -9,8 +9,6 @@ var addsrc = require('gulp-add-src');
 var async = require('async');
 var sourcemaps = require('gulp-sourcemaps');
 var eslint = require('gulp-eslint');
-
-
 var paths = {
   filesrc: 'source/**/*',
   filepath: 'public',
@@ -24,7 +22,7 @@ var paths = {
 }
 
 gulp.task('watch', function() {
-  gulp.watch('source/**/*', ['build',])
+  gulp.watch('source/**/*', ['lint', 'build',])
 });
 
 gulp.task('lint', function() {
@@ -39,14 +37,21 @@ gulp.task('lint', function() {
             '$':true,
             'angular': true,
             'Masonry': true,
-            'google': true
+            'google': true,
+            'mandrill': true
         },
         envs: [
             'browser'
         ]
     }))
     .pipe(eslint.format())
-    // .pipe(eslint.failAfterError());
+    .pipe(eslint.result(function (result) {
+      console.log('ESLint result: ' + result.filePath);
+      console.log('# Messages: ' + result.messages.length);
+      console.log('# Warnings: ' + result.warningCount);
+      console.log('# Errors: ' + result.errorCount);
+
+    }));
 });
 
 gulp.task('build', function() {
@@ -74,4 +79,4 @@ gulp.task('clean', function(cb) {
   async.each(paths.cleanedfiles, rimraf, cb);
 });
 
-gulp.task('default', ['lint', 'build', 'bower', 'watch']);
+gulp.task('default', ['build', 'bower', 'watch']);
