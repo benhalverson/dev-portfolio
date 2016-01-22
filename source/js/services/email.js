@@ -4,7 +4,7 @@ angular.module('portfolio')
       var data = {
         'key': key,
         'message': {
-          'from-email': from,
+          'from_email': from,
           'to': [
             {
               'email': to,
