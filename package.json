@@ -17,15 +17,15 @@
   },
   "homepage": "https://github.com/benhalverson/dev-portfolio#readme",
   "devDependencies": {
-    "gulp": "3.9.0",
+    "gulp": "3.9.1",
     "gulp-add-src": "0.2.0",
-    "gulp-concat": "2.6.0",
-    "gulp-copy": "0.0.2",
-    "gulp-eslint": "1.1.1",
-    "gulp-run": "1.6.12",
-    "gulp-sourcemaps": "1.6.0",
-    "gulp-util": "3.0.7",
-    "imagemin": "4.0.0",
-    "rimraf": "2.5.0"
+    "gulp-concat": "2.6.1",
+    "gulp-copy": "1.0.0",
+    "gulp-eslint": "3.0.1",
+    "gulp-run": "1.7.1",
+    "gulp-sourcemaps": "2.4.1",
+    "gulp-util": "3.0.8",
+    "imagemin": "5.2.2",
+    "rimraf": "2.5.4"
   }
 }
